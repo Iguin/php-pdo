@@ -20,8 +20,8 @@ $db = new PDODatabase(
   - [Private](#closed_lock_with_key-atributos-privados)
 
 - [Métodos](#metodos)
-  - [Private](#métodos-privados)
-  - [Public](#métodos-públicos)
+  - [Private](#page_with_curl-métodos-privados)
+  - [Public](#page_with_curl-métodos-públicos)
 
 ## Atributos
 
@@ -65,21 +65,37 @@ $db = new PDODatabase(
 
 ## Métodos
 
-### Métodos privados
+### :page_with_curl: Métodos privados
 
-### Métodos públicos
+#### bindValues(): void
 
-#### setQuery( _string_ $query )
+> Liga os [parâmetros](#params) da [query](#query) por _chave_ e _valor_<br>
+> **_return void_**
+```php
+  class PDODatabase 
+  {
+    ...
+    private function bindValues(): void {
+      ...
+    }
+  }
+```
 
-> Define a query que será realizada pelo método [execute()](#execute)
+### :page_with_curl: Métodos públicos
+
+#### setQuery( _string_ $query ): void
+
+> Define a query que será realizada pelo método [execute()](#execute) <br>
+> **_return void_**
 
 ```php
   $db->setQuery("...");
 ```
 
-#### setParams( _array_ $query )
+#### setParams( _array_ $query ): void
 
-> Define os parâmetros da query, utilizando _chave_ e _valor_
+> Define os parâmetros da query, utilizando _chave_ e _valor_ <br>
+> **_return void_**
 
 ```php
   $db->setQuery("SELECT * FROM `database` WHERE `name` = :name AND `last_name` = :last_name");
