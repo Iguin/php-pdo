@@ -1,40 +1,38 @@
-# PDO database
+# PDO MySQL
 
 Classe php que utiliza o PDO para realizar a conexão com o banco de dados.
 
 ## Sumário
 
 - [Atributos](#atributos)
-  - [Private](#atributos-privados)
-  - [Public](#atributos-publicos)
+  - [Private](#closed_lock_with_key-atributos-privados)
+  - [Public](#unlock-atributos-publicos)
 
 - [Métodos](#metodos)
   - [Private](#metodos-privados)
   - [Public](#metodos-publicos)
 
+```php
+$db = new PDODatabase(
+  $dbUser, // Usuário
+  $dbPass, // Senha
+  $dbHost, // Host
+  $dbName, // Nome do banco de dados
+  $dbCharset = 'utf8' // Charset do banco
+);
+```
 ## Atributos
 
 ### :closed_lock_with_key: Atributos Privados
 
-#### $dbHost
-> Define o host do banco de dados, pode ser alterado diretamente no arquivo ou utilizando o método [setDbHost](#setdbhost)
+#### $conn
+> ***PDO*** <br>
+Conexão com o banco, inicializado no método construtor.
 ``` php
-  private $dbHost;
+  private $conn;
 ```
 
-#### $dbName
-> Define o nome do banco de dados, pode ser alterado diretamente no arquivo ou utilizando o método [setDbName](#setdbname)
-``` php
-  private $dbName;
-```
-
-#### $dbName
-> Define o charset do banco de dados, seu valor é predefinido como **utf8**. Pode ser alterado diretamente no arquivo ou utilizando o método [setDbCharset](#setdbcharset)
-``` php
-  private $dbCharset = 'utf8';
-```
-
-### :unlock:Atributos Públicos
+### :unlock: Atributos Públicos
 
 ## Métodos
 
