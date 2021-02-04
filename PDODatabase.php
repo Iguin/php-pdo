@@ -15,7 +15,7 @@ class PDODatabase
   private $conn;
 
   /**
-   * @var PDOStatment $stmt database statment
+   * @var PDOStatement $stmt database statment
    */
   private $stmt;
 
