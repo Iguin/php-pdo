@@ -2,16 +2,6 @@
 
 Classe php que utiliza o PDO para realizar a conexão com o banco de dados.
 
-## Sumário
-
-- [Atributos](#atributos)
-
-  - [Private](#closed_lock_with_key-atributos-privados)
-
-- [Métodos](#metodos)
-  - [Private](#metodos-privados)
-  - [Public](#metodos-publicos)
-
 ```php
 $db = new PDODatabase(
   $dbUser, // Usuário
@@ -22,6 +12,16 @@ $db = new PDODatabase(
   $dbOptions = array() // Opções
 );
 ```
+
+## Sumário
+
+- [Atributos](#atributos)
+
+  - [Private](#closed_lock_with_key-atributos-privados)
+
+- [Métodos](#metodos)
+  - [Private](#métodos-privados)
+  - [Public](#métodos-públicos)
 
 ## Atributos
 
@@ -48,7 +48,7 @@ $db = new PDODatabase(
 #### $query
 
 > **_string_** <br>
-> Query SQL que será utilizada, definida pelo método [setQuery( $query )](#setquery)
+> Query SQL que será utilizada, definida pelo método [setQuery( $query )](#setquery-string-query-)
 
 ```php
   private $query;
@@ -57,7 +57,7 @@ $db = new PDODatabase(
 #### $params
 
 > **_array_** <br>
-> Parâmetros da query, definida pelo método [setParams( $params )](#setparams)
+> Parâmetros da query, definida pelo método [setParams( $params )](#setparams-array-query-)
 
 ```php
   private $query;
@@ -77,14 +77,13 @@ $db = new PDODatabase(
   $db->setQuery("...");
 ```
 
-
 #### setParams( _array_ $query )
 
-> Define os parâmetros da query, utilizando *chave* e *valor*
+> Define os parâmetros da query, utilizando _chave_ e _valor_
 
 ```php
   $db->setQuery("SELECT * FROM `database` WHERE `name` = :name AND `last_name` = :last_name");
-  
+
   $db->setParams([
     ":name"       => "Igor",
     ":last_name"  => "Horta",
